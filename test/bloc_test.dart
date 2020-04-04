@@ -202,4 +202,57 @@ void main() {
     bloc.add(const GetComments(postId: 1));
     bloc.add(const FilterComments(keyword: 'id 1'));
   });
+
+  test('test Post model', () {
+    final post = Post(
+      userId: 1,
+      title: 'post title',
+      body: 'post body',
+      id: 1,
+    );
+
+    expect(post.toJson(), {
+      'userId': 1,
+      'title': 'post title',
+      'body': 'post body',
+      'id': 1,
+    });
+
+    expect(
+        post,
+        Post.fromJson({
+          'userId': 1,
+          'title': 'post title',
+          'body': 'post body',
+          'id': 1,
+        }));
+  });
+
+  test('test Comment model', () {
+    final comment = Comment(
+      email: 'comment email',
+      name: 'comment name',
+      postId: 1,
+      body: 'post body',
+      id: 1,
+    );
+
+    expect(comment.toJson(), {
+      'email': 'comment email',
+      'name': 'comment name',
+      'postId': 1,
+      'body': 'post body',
+      'id': 1,
+    });
+
+    expect(
+        comment,
+        Comment.fromJson({
+          'email': 'comment email',
+          'name': 'comment name',
+          'postId': 1,
+          'body': 'post body',
+          'id': 1,
+        }));
+  });
 }
