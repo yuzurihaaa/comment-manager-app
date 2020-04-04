@@ -1,6 +1,7 @@
 import 'package:comment_manager_app/bloc/bloc.dart';
 import 'package:comment_manager_app/model/model.dart';
 import 'package:comment_manager_app/service/rest_client.dart';
+import 'package:dio/dio.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:mockito/mockito.dart';
 
@@ -87,6 +88,21 @@ void main() {
               body: 'body of id 2',
             ),
           ])
+        ]));
+
+    bloc.add(GetPosts());
+  });
+
+  test('Test Bloc fetch all posts with error', () {
+    when(client.getPosts()).thenAnswer(
+      (_) => throw DioError(),
+    );
+
+    expectLater(
+        bloc,
+        emitsInOrder([
+          PostState.initial(),
+          PostState.initial().copyWith(hasError: true)
         ]));
 
     bloc.add(GetPosts());

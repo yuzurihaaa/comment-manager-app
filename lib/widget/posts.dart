@@ -18,6 +18,29 @@ class Posts extends HookWidget {
       return bloc.close;
     }, [bloc]);
 
+    final _locale = S.of(context);
+    useEffect(() {
+      if (blocListener.hasError != null && blocListener.hasError) {
+        WidgetsBinding.instance.addPostFrameCallback((_) {
+          showDialog(
+            context: context,
+            builder: (dialogContext) => AlertDialog(
+              title: Text(_locale.error),
+              content: Text(_locale.error_fetching),
+              actions: <Widget>[
+                FlatButton(
+                  onPressed: () => Navigator.pop(dialogContext),
+                  child: Text(_locale.close),
+                ),
+              ],
+            ),
+          );
+        });
+      }
+
+      return null;
+    }, [blocListener, blocListener?.hasError]);
+
     return Scaffold(
       appBar: AppBar(
         title: Text(S.of(context).appTitle),
@@ -42,6 +65,7 @@ class _ListItem extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) => ListTile(
+        key: Key('${post.id}'),
         onTap: () => widget.Post.push(context, post: post),
         title: Text(post.title),
         subtitle: Text(post.body),

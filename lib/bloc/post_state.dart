@@ -6,12 +6,14 @@ class PostState extends Equatable {
   final Post focusedPost;
   final List<Comment> comments;
   final List<Comment> allComments;
+  final bool hasError;
 
   const PostState({
     this.posts,
     this.focusedPost,
     this.comments,
     this.allComments,
+    this.hasError,
   });
 
   PostState copyWith({
@@ -19,12 +21,14 @@ class PostState extends Equatable {
     Post focusedPost,
     List<Comment> comments,
     final List<Comment> allComments,
+    bool hasError,
   }) =>
       PostState(
         posts: posts ?? this.posts,
         focusedPost: focusedPost ?? this.focusedPost,
         comments: comments ?? this.comments,
         allComments: allComments ?? this.allComments,
+        hasError: hasError,
       );
 
   factory PostState.initial() => const PostState(
@@ -32,6 +36,7 @@ class PostState extends Equatable {
         focusedPost: null,
         posts: null,
         allComments: null,
+        hasError: false,
       );
 
   @override
@@ -40,5 +45,6 @@ class PostState extends Equatable {
         focusedPost,
         comments,
         allComments,
+        hasError,
       ];
 }

@@ -25,13 +25,27 @@ Future main() async {
     };
   }
 
-  runApp(MyApp());
+  runApp(MyApp(
+    home: Posts(),
+  ));
 }
 
 class MyApp extends StatelessWidget {
+  /// These three arguments are mainly for unit tests.
+  final Locale locale;
+  final Widget home;
+  final PostBloc bloc;
+
+  const MyApp({
+    this.locale,
+    this.bloc,
+    @required this.home,
+  });
+
+  /// We create bloc from [PostBloc] if [bloc] argument is null.
   @override
   Widget build(BuildContext context) => BlocProvider(
-        create: (_) => PostBloc(client),
+        create: (_) => bloc ?? PostBloc(client),
         child: MaterialApp(
           title: 'Comment Manager App',
           localizationsDelegates: [
@@ -40,11 +54,12 @@ class MyApp extends StatelessWidget {
             GlobalCupertinoLocalizations.delegate,
             S.delegate,
           ],
+          locale: locale,
           supportedLocales: S.delegate.supportedLocales,
           theme: ThemeData(
             primarySwatch: Colors.blue,
           ),
-          home: Posts(),
+          home: home,
         ),
       );
 }

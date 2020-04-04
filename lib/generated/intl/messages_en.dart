@@ -19,10 +19,16 @@ typedef String MessageIfAbsent(String messageStr, List<dynamic> args);
 class MessageLookup extends MessageLookupByLibrary {
   String get localeName => 'en';
 
+  static m0(name) => "from ${name}";
+
   final messages = _notInlinedMessages(_notInlinedMessages);
   static _notInlinedMessages(_) => <String, Function> {
     "appTitle" : MessageLookupByLibrary.simpleMessage("Comment Manager App"),
+    "close" : MessageLookupByLibrary.simpleMessage("Close"),
     "comments" : MessageLookupByLibrary.simpleMessage("comments"),
+    "error" : MessageLookupByLibrary.simpleMessage("Error"),
+    "error_fetching" : MessageLookupByLibrary.simpleMessage("Error fetching data"),
+    "from" : m0,
     "searchBy" : MessageLookupByLibrary.simpleMessage("Search by name, email, or body")
   };
 }

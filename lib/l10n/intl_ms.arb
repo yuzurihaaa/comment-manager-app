@@ -2,5 +2,9 @@
   "@@locale": "ms",
   "appTitle": "App Pegurusan Komen",
   "comments" : "Komen",
-  "searchBy": "Carian melalui nama, email atau badan"
+  "searchBy": "Carian melalui nama, email atau badan",
+  "error": "Masalah",
+  "error_fetching": "Masalah mendapatkan data",
+  "close": "Tutup",
+  "by" : "dari {name}"
 }

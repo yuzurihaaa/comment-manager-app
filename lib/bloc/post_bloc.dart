@@ -2,6 +2,7 @@ import 'dart:async';
 import 'package:bloc/bloc.dart';
 import 'package:comment_manager_app/bloc/post_state.dart';
 import 'package:comment_manager_app/service/service.dart';
+import 'package:dio/dio.dart';
 import './bloc.dart';
 
 class PostBloc extends Bloc<PostEvent, PostState> {
@@ -17,19 +18,32 @@ class PostBloc extends Bloc<PostEvent, PostState> {
     PostEvent event,
   ) async* {
     if (event is GetPosts) {
-      final posts = await client.getPosts();
-      yield state.copyWith(posts: posts);
+      try {
+        yield PostState.initial();
+        final posts = await client.getPosts();
+        yield state.copyWith(posts: posts);
+      } on DioError catch (_) {
+        yield state.copyWith(hasError: true);
+      }
     }
 
     if (event is GetPost) {
-      final post = await client.getPost(event.postId);
+      try {
+        final post = await client.getPost(event.postId);
 
-      yield state.copyWith(focusedPost: post);
+        yield state.copyWith(focusedPost: post);
+      } on DioError catch (_) {
+        yield state.copyWith(hasError: true);
+      }
     }
 
     if (event is GetComments) {
-      final comments = await client.getComments(event.postId);
-      yield state.copyWith(allComments: comments, comments: comments);
+      try {
+        final comments = await client.getComments(event.postId);
+        yield state.copyWith(allComments: comments, comments: comments);
+      } on DioError catch (_) {
+        yield state.copyWith(hasError: true);
+      }
     }
 
     if (event is FilterComments) {
