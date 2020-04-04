@@ -1,0 +1,6 @@
+{
+  "@@locale": "en",
+  "appTitle": "Comment Manager App",
+  "comments" : "comments",
+  "searchBy": "Search by name, email, or body"
+}
