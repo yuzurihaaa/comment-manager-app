@@ -1,3 +1,6 @@
+[![CircleCI](https://circleci.com/gh/zaralockheart/comment-manager-app.svg?style=svg)](https://circleci.com/gh/zaralockheart/comment-manager-app)
+[![codecov](https://codecov.io/gh/zaralockheart/comment-manager-app/branch/master/graph/badge.svg)](https://codecov.io/gh/zaralockheart/comment-manager-app)
+
 # comment_manager_app
 
 Flutter project for interview.
