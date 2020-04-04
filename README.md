@@ -5,6 +5,29 @@
 
 Flutter project for interview.
 
+## Requirement
+- [x] Create a screen to display all the posts
+    * View all posts endpoint: https://jsonplaceholder.typicode.com/posts
+
+- [x] Create a second screen that shows all the comments related to a post
+    * View individual post endpoint: https://jsonplaceholder.typicode.com/posts/{post_id}
+    * View comments for a post endpoint: https://jsonplaceholder.typicode.com/comments?postId=1
+
+- [x] Add a search box that allows the user to filter the comments related to a post. The user should be able to filter the results based on the:
+     * name
+     * email
+     * body
+     
+In response to Notes:
+> Once completed, send us a screenshot of all screens
+
+* Please head to [Screenshot](#screenshot)
+
+> Make your repo public, and send us the link for us to review
+
+* This repo is open sourced ;) if you are interested, circleci and codecov is public too!
+Just click on the badge.
+
 ### Prerequisites
 1. Flutter
 2. Android Studio / XCode - For emulator / simulator
