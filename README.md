@@ -1,6 +1,6 @@
 # comment_manager_app
 
-A new Flutter project.
+Flutter project for interview.
 
 ### Prerequisites
 1. Flutter
