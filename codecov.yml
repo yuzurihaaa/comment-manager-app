@@ -25,5 +25,5 @@ comment:
   require_changes: no
 
 ignore:
-  - "lib/services/*.dart"
+  - "lib/service/*.dart"
   - "lib/main.dart"
