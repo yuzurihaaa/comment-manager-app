@@ -1,6 +1,6 @@
 # comment_manager_app
 
-A new Flutter project.
+Flutter project for interview.
 
 ### Prerequisites
 1. Flutter
@@ -29,6 +29,13 @@ A new Flutter project.
 2. Services
     1. [Dio](https://pub.dev/packages/dio) - Network
     2. [Retrofit](https://pub.dev/packages/retrofit) - Network Interface
+
+## Screenshot
+![First Screen](screenshot/posts.png)
+
+![Post Screen](screenshot/post_comments.png)
+
+![Filtered](screenshot/comments_filter.png)
 
 ## Development environment
 

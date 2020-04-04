@@ -22,7 +22,10 @@ class MessageLookup extends MessageLookupByLibrary {
   final messages = _notInlinedMessages(_notInlinedMessages);
   static _notInlinedMessages(_) => <String, Function> {
     "appTitle" : MessageLookupByLibrary.simpleMessage("App Pegurusan Komen"),
+    "close" : MessageLookupByLibrary.simpleMessage("Tutup"),
     "comments" : MessageLookupByLibrary.simpleMessage("Komen"),
+    "error" : MessageLookupByLibrary.simpleMessage("Masalah"),
+    "error_fetching" : MessageLookupByLibrary.simpleMessage("Masalah mendapatkan data"),
     "searchBy" : MessageLookupByLibrary.simpleMessage("Carian melalui nama, email atau badan")
   };
 }

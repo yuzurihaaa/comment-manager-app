@@ -72,6 +72,7 @@ class _PostDetail extends HookWidget {
           const Divider(),
           Text(S.of(context).comments),
           TextFormField(
+            key: const Key('search box'),
             onChanged: (value) => bloc.add(FilterComments(keyword: value)),
             decoration: InputDecoration(
               hintText: S.of(context).searchBy,
@@ -85,10 +86,17 @@ class _PostDetail extends HookWidget {
                 itemCount: blocListener.comments.length,
                 itemBuilder: (_, index) {
                   final comment = blocListener.comments[index];
-
+                  final name = comment.name;
+                  final email = comment.email;
                   return ListTile(
-                    title: Text('${comment.name} ${comment.email}'),
-                    subtitle: Text(comment.body),
+                    title: Text(comment.body),
+                    subtitle: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: <Widget>[
+                        Text(S.of(context).from(name)),
+                        Text(email),
+                      ],
+                    ),
                   );
                 },
               ),

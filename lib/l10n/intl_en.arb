@@ -2,5 +2,9 @@
   "@@locale": "en",
   "appTitle": "Comment Manager App",
   "comments" : "comments",
-  "searchBy": "Search by name, email, or body"
+  "searchBy": "Search by name, email, or body",
+  "error": "Error",
+  "error_fetching": "Error fetching data",
+  "close": "Close",
+  "from" : "from {name}"
 }

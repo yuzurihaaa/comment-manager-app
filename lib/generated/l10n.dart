@@ -53,6 +53,42 @@ class S {
       args: [],
     );
   }
+
+  String get error {
+    return Intl.message(
+      'Error',
+      name: 'error',
+      desc: '',
+      args: [],
+    );
+  }
+
+  String get error_fetching {
+    return Intl.message(
+      'Error fetching data',
+      name: 'error_fetching',
+      desc: '',
+      args: [],
+    );
+  }
+
+  String get close {
+    return Intl.message(
+      'Close',
+      name: 'close',
+      desc: '',
+      args: [],
+    );
+  }
+
+  String from(Object name) {
+    return Intl.message(
+      'from $name',
+      name: 'from',
+      desc: '',
+      args: [name],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {
