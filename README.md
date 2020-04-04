@@ -30,6 +30,13 @@ A new Flutter project.
     1. [Dio](https://pub.dev/packages/dio) - Network
     2. [Retrofit](https://pub.dev/packages/retrofit) - Network Interface
 
+## Screenshot
+![First Screen](screenshot/posts.png)
+
+![Post Screen](screenshot/post_comments.png)
+
+![Filtered](screenshot/comments_filter.png)
+
 ## Development environment
 
 This application does not log api network, use your own proxy client. I am using [mitmproxy](https://mitmproxy.org)
